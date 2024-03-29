@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Bank {
 
+    /**
+     * cycle to make operations on a certain bank account
+     * @param conto
+     */
     private static void operazioni(Conto conto){
         Scanner scan = new Scanner(System.in);
         int operazione = 0;

@@ -1,6 +1,7 @@
 package org.learning.java_shop;
 
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Prodotto {
@@ -12,11 +13,18 @@ public class Prodotto {
     private double prezzo;
     private int iva;
 
-    public Prodotto(int codice, java.lang.String nome, java.lang.String descrizione, double prezzo, int iva) {
-        this.codice = codice;
+    /**
+     * constructor
+     *
+     * @param nome
+     * @param descrizione
+     * @param prezzo
+     * @param iva
+     */
+    public Prodotto( java.lang.String nome, java.lang.String descrizione, double prezzo, int iva) {
         this.nome = nome;
         this.descrizione = descrizione;
-        this.prezzo = Integer.parseInt(String.format("%02d", prezzo));
+        this.prezzo = prezzo;
         this.iva = iva;
         setCodice();
     }
@@ -37,9 +45,24 @@ public class Prodotto {
     }
 
     public String getExtendedName(){
-        String extended = String.format("%80d", this.codice);
+        String extended = String.format("%08d", this.codice);
         extended += this.nome;
         return extended;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void printAll(){
+        System.out.println("nome:        "+nome);
+        System.out.println("descrizione: "+descrizione);
+        System.out.println("iva:         "+iva);
+        System.out.println("codice:      "+codice);
+        System.out.println();
+        System.out.println("prezzo: "+getPrezzo());
+        System.out.println("ivaprz: "+getIvaPrezzo());
+        System.out.println("nomest: "+getExtendedName());
     }
 
 }

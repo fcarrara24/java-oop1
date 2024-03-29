@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Prodotto {
 
-
+    private static int ultimoConto = 0;
     private int codice;
     private String nome;
     private String descrizione;
@@ -33,10 +33,13 @@ public class Prodotto {
     }
 
 
+    /**
+     * creazione di un conto progressivo
+     */
     private void setCodice() {
-        Random rnd = new Random();
-        this.codice = rnd.nextInt(99999999);
-
+        //incremento l'indice dell'ultimo conto
+        ultimoConto++;
+        this.codice = ultimoConto;
     }
 
     public BigDecimal getPrezzo(){

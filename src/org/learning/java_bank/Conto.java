@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.Random;
 
 public class Conto {
+    private static int prossimoConto = 0;
     private int numeroConto;
     private String nomeProprietario;
     private double saldo = 0;
@@ -88,8 +89,8 @@ public class Conto {
      * estrae casualmente il numero di conto
      */
     public void setNumeroConto() {
-        Random rnd = new Random();
-        this.numeroConto =  rnd.nextInt(1000);
+        prossimoConto ++;
+        this.numeroConto =  prossimoConto;
     }
 
 

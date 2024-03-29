@@ -36,11 +36,11 @@ public class Conto {
      * rimuove la somma dal saldo (se disponibile)
      * @param somma
      */
-    public void preleva(double somma){
-        if(somma > this.saldo){ System.out.println("\n\nOPERAZIONE RESPINTA: il saldo di "+Bonus.decimalValue(saldo)+" non è sufficiente per prelevare "+Bonus.decimalValue(somma)); return;}
+    public boolean preleva(double somma){
+        if(somma > this.saldo){ System.out.println("\n\nOPERAZIONE RESPINTA: il saldo di "+Bonus.decimalValue(saldo)+" non è sufficiente per prelevare "+Bonus.decimalValue(somma)); return false;}
         this.saldo = this.saldo - somma;
         System.out.println("\n\nhai prelevato "+Bonus.decimalValue(somma)+"il tuo saldo attuale è di "+Bonus.decimalValue(saldo)+"euro");
-        return;
+        return true;
     }
 
     /**

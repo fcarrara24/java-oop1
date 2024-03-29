@@ -1,6 +1,9 @@
 package org.learning.java_shop;
 
 
+import org.learning.bonus_utility.Bonus;
+
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Random;
 
@@ -36,12 +39,12 @@ public class Prodotto {
 
     }
 
-    public double getPrezzo(){
-        return this.prezzo;
+    public BigDecimal getPrezzo(){
+        return Bonus.decimalValue(this.prezzo);
     }
 
-    public double getIvaPrezzo(){
-        return this.prezzo * (1 + 0.01*this.iva);
+    public BigDecimal getIvaPrezzo(){
+        return Bonus.decimalValue(this.prezzo * (1 + 0.01*this.iva));
     }
 
     public String getExtendedName(){

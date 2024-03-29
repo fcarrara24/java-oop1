@@ -42,11 +42,11 @@ public class Bank {
     public static void main(String[] args) {
         String nome;
         Scanner sc = new Scanner(System.in);
-        Random rnd = new Random();
+
         double sommadaMuovere = 0;
 
         //numero conto
-        int numeroConto = rnd.nextInt(1000);
+
 
         //inserimento nome
         System.out.print("inserire il nome ");
@@ -54,7 +54,7 @@ public class Bank {
 
 
         // creazione conto (saldo iniziale 1000 euro)
-        Conto conto1 = new Conto(numeroConto, nome, 1000);
+        Conto conto1 = new Conto( nome, 1000);
 
 
         //esecuzione operazioni
